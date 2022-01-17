@@ -5952,7 +5952,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 6440108217711000595, guid: f2a002f530329884aafe6c0ed5c2cd59,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.625, y: 1.203125}
@@ -6033,6 +6033,8 @@ MonoBehaviour:
   acceleration: 0.15
   maxWalkSpeed: 2
   maxRunSpeed: 3
+  Run: {fileID: 1567288101}
+  SR: {fileID: 1567288102}
 --- !u!1 &1676093950
 GameObject:
   m_ObjectHideFlags: 0

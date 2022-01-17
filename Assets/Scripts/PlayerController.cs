@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float jumpForce, quickFall, jumpDelay, vaultJumpModifier, maxVaultChain;
     public float acceleration, maxWalkSpeed, maxRunSpeed;
+    public Animator Run;
+    public SpriteRenderer SR;
 
     private Rigidbody2D rb;
     private float lastDirection = 0;
@@ -79,8 +81,18 @@ public class PlayerController : MonoBehaviour
 
     private void Walk()
     {
+        if (Input.GetAxisRaw("Horizontal") != lastDirection && Input.GetAxisRaw("Horizontal") != 0)
+        {
+            SR.flipX = !SR.flipX;
+        }
+
         GetLastDirection();
         float maxMoveSpeed = MaxSpeed();
+
+        if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            Run.Play("Run");
+        }
 
         if(Input.GetAxisRaw("Horizontal") != 0)
         {
